@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 'use client';
 
 import { useThemeToggle } from '@/components/ThemeProviderWrapper';
@@ -10,13 +9,14 @@ import {
 } from '@mui/material';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
-import MenuIcon from '@mui/icons-material/Menu';
+import AddIcon from '@mui/icons-material/Add';
 
 interface NavbarProps {
   toggleDrawer: () => void;
+  isDrawerOpen: boolean;
 }
 
-export default function Navbar({ toggleDrawer }: NavbarProps) {
+export default function Navbar({ toggleDrawer, isDrawerOpen }: NavbarProps) {
   const { darkMode, toggleTheme } = useThemeToggle();
 
   return (
@@ -36,9 +36,16 @@ export default function Navbar({ toggleDrawer }: NavbarProps) {
           >
             {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
           </IconButton>
-          <IconButton onClick={toggleDrawer} color="inherit">
-            <MenuIcon />
-          </IconButton>
+          {!isDrawerOpen && (
+            <IconButton onClick={toggleDrawer} color="inherit"
+              sx={{
+                border: '0.5px solid',
+                borderRadius: '15%',
+                padding: '7px',
+              }}>
+              <AddIcon />
+            </IconButton>
+          )}
         </div>
       </Toolbar>
     </AppBar>
