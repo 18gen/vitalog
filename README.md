@@ -1,3 +1,9 @@
+# **バイタログ** :stethoscope: 
+あなたのバイタル、覚えます。チャートで推移の表示も可能。
+
+https://github.com/user-attachments/assets/10c4c966-db68-407a-9c4d-0c637b46fca4
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
